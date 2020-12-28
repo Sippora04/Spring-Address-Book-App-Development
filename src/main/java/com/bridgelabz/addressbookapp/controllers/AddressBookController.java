@@ -22,9 +22,9 @@ import com.bridgelabz.addressbookapp.service.IAddressBookService;
 @RestController
 @RequestMapping(value = "/addressbook")
 public class AddressBookController {
-	/* Autowired Annotation is used to do
-	 * Dependency Injection of the Services Object
-	 * to the Controller.
+	/*
+	 * Autowired Annotation is used to do Dependency Injection of the Services
+	 * Object to the Controller.
 	 */
 	@Autowired
 	private IAddressBookService addressBookService;
@@ -38,7 +38,7 @@ public class AddressBookController {
 	}
 
 	@GetMapping("/get/{id}")
-	public ResponseEntity<ResponseDTO> getEmployeePayrollData(@PathVariable("id") int id) {
+	public ResponseEntity<ResponseDTO> getAddressBookDatById(@PathVariable("id") int id) {
 		AddressBookData addressbookData = null;
 		addressbookData = addressBookService.getAddressBookDatById(id);
 		ResponseDTO responseDTO = new ResponseDTO("Get Call for ID Successfull", addressbookData);
@@ -46,7 +46,7 @@ public class AddressBookController {
 	}
 
 	@PostMapping("/create")
-	public ResponseEntity<ResponseDTO> addEmployeePayrollData(@RequestBody AddressBookDTO addressBookDTO) {
+	public ResponseEntity<ResponseDTO> createAddressBookData(@RequestBody AddressBookDTO addressBookDTO) {
 		AddressBookData addressbookData = null;
 		addressbookData = addressBookService.createAddressBookData(addressBookDTO);
 		ResponseDTO responseDTO = new ResponseDTO("Created AddressBook Data Successfully", addressbookData);
@@ -54,7 +54,7 @@ public class AddressBookController {
 	}
 
 	@PutMapping("/update/{id}")
-	public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@PathVariable("id") int id,
+	public ResponseEntity<ResponseDTO> updateAddressBookData(@PathVariable("id") int id,
 			@RequestBody AddressBookDTO addressBookDTO) {
 		AddressBookData addressbookData = null;
 		addressbookData = addressBookService.updateAddressBookData(id, addressBookDTO);
@@ -63,7 +63,8 @@ public class AddressBookController {
 	}
 
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<ResponseDTO> deleteEmployeePayrollData(@PathVariable("id") int id) {
+	public ResponseEntity<ResponseDTO> deleteAddressBookData(@PathVariable("id") int id) {
+		addressBookService.deleteAddressBookData(id);
 		ResponseDTO responseDTO = new ResponseDTO("Deleted AddressBook Data Successfully", "Deleted id : " + id);
 		return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 	}
