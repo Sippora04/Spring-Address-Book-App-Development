@@ -22,7 +22,10 @@ import com.bridgelabz.addressbookapp.service.IAddressBookService;
 @RestController
 @RequestMapping(value = "/addressbook")
 public class AddressBookController {
-
+	/* Autowired Annotation is used to do
+	 * Dependency Injection of the Services Object
+	 * to the Controller.
+	 */
 	@Autowired
 	private IAddressBookService addressBookService;
 
