@@ -29,3 +29,4 @@
 2020-12-30 02:22:16.542  INFO 18116 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2020-12-30 02:22:16.593  INFO 18116 --- [restartedMain] c.b.a.AddressBookApplication             : Started AddressBookApplication in 8.717 seconds (JVM running for 10.558)
 2020-12-30 02:22:16.622  INFO 18116 --- [restartedMain] c.b.a.AddressBookApplication             : Address Book App Started COMMON Environment 
+2020-12-30 02:22:16.625  INFO 18116 --- [restartedMain] c.b.a.AddressBookApplication             : Address Book DB User is addressbookuser 
