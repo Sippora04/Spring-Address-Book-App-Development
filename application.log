@@ -1,0 +1,6 @@
+2020-12-30 01:39:57.844  INFO 32100 --- [restartedMain] c.b.a.AddressBookApplication             : Starting AddressBookApplication using Java 15 on LAPTOP-3DI0D855 with PID 32100 (C:\Users\sippo\Documents\workspace-spring-tool-suite-4-4.8.1.RELEASE\AddressBookApp\target\classes started by sippo in C:\Users\sippo\Documents\workspace-spring-tool-suite-4-4.8.1.RELEASE\AddressBookApp)
+2020-12-30 01:39:57.853 DEBUG 32100 --- [restartedMain] c.b.a.AddressBookApplication             : Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-30 01:39:57.853  INFO 32100 --- [restartedMain] c.b.a.AddressBookApplication             : No active profile set, falling back to default profiles: default
+2020-12-30 01:40:04.507  WARN 32100 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-30 01:40:05.268  INFO 32100 --- [restartedMain] c.b.a.AddressBookApplication             : Started AddressBookApplication in 8.354 seconds (JVM running for 11.014)
+2020-12-30 01:40:05.275  INFO 32100 --- [restartedMain] c.b.a.AddressBookApplication             : ***** Address Book App Started *****
