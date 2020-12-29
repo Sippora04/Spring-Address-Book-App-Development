@@ -11,19 +11,19 @@ import com.bridgelabz.addressbookapp.dto.AddressBookDTO;
 
 import lombok.Data;
 
+// @Entity Annotation tells Hibernate to create a table
 @Entity
 @Table(name = "address_book")
 public @Data class AddressBookData {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	@Column(name = "name")
 	private String name;
 	private String address;
-	
+
 	@Column(name = "phone_number")
 	private String phoneNumber;
 	private String city;
@@ -33,7 +33,12 @@ public @Data class AddressBookData {
 	public AddressBookData() {
 	}
 
-	public AddressBookData(int id, AddressBookDTO addressBookDTO) {
+	public AddressBookData(AddressBookDTO addressBookDTO) {
+		this.updateAddressBookData(addressBookDTO);
+	}
+
+	public void updateAddressBookData(AddressBookDTO addressBookDTO) {
+		// TODO Auto-generated method stub
 		this.id = id;
 		this.name = addressBookDTO.name;
 		this.address = addressBookDTO.address;
