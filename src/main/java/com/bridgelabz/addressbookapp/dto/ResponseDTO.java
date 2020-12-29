@@ -1,6 +1,13 @@
 package com.bridgelabz.addressbookapp.dto;
 
-public class ResponseDTO {
+import lombok.Data;
+
+/*Lombok is an annotation processor - it has full access to the
+ * generated source tree. While annotation processors usually generate
+ * new source files, Lombok modifies existing Class by adding new fields
+ * or methods.
+ */
+public @Data class ResponseDTO {
 	private String message;
 	private Object data;
 
