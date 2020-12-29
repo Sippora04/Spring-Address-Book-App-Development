@@ -2,10 +2,16 @@ package com.bridgelabz.addressbookapp.model;
 
 import com.bridgelabz.addressbookapp.dto.AddressBookDTO;
 
-public class AddressBookData {
+import lombok.Data;
+
+public @Data class AddressBookData {
 	private int id;
 	private String name;
 	private String address;
+	private String phoneNumber;
+	private String city;
+	private String state;
+	private String zip;
 
 	public AddressBookData() {
 	}
@@ -14,30 +20,9 @@ public class AddressBookData {
 		this.id = id;
 		this.name = addressBookDTO.name;
 		this.address = addressBookDTO.address;
+		this.phoneNumber = addressBookDTO.phoneNumber;
+		this.city = addressBookDTO.city;
+		this.state = addressBookDTO.state;
+		this.zip = addressBookDTO.zip;
 	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
 }

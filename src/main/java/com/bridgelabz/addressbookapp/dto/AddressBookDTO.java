@@ -1,24 +1,28 @@
 package com.bridgelabz.addressbookapp.dto;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
-public class AddressBookDTO {
-	//@NotEmpty(message = "Name cannot be null")
-	@Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$")
+import lombok.ToString;
+
+public @ToString class AddressBookDTO {
+	// @NotEmpty(message = "Name cannot be null")
+	@Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "\n Incorrect User name")
 	public String name;
-	
+
 	@NotEmpty(message = "Address cannot be null")
 	public String address;
 
-	public AddressBookDTO(String name, String address) {
-		super();
-		this.name = name;
-		this.address = address;
-	}
+	@Pattern(regexp = "^[7-9]{1}[0-9]{9}$", message = "\n Incorrect phone number")
+	public String phoneNumber;
 
-	@Override
-	public String toString() {
-		return "AddressBookDTO [name=" + name + ", address=" + address + "]";
-	}
+	@NotBlank(message = "City cannot be Empty")
+	public String city;
+
+	@NotBlank(message = "State cannot be Empty")
+	public String state;
+
+	@Pattern(regexp = "^[1-9]{1}[0-9]{5}$", message = "Invalid Zip Code")
+	public String zip;
 }
