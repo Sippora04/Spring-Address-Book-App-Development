@@ -4,7 +4,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
 public class AddressBookDTO {
-	@NotEmpty(message = "Name cannot be null")
+	//@NotEmpty(message = "Name cannot be null")
 	@Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$")
 	public String name;
 	
