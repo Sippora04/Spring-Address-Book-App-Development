@@ -6,7 +6,9 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.bridgelabz.addressbookapp.dto.AddressBookDTO;
+import com.bridgelabz.addressbookapp.exceptions.AddressBookException;
 import com.bridgelabz.addressbookapp.model.AddressBookData;
+
 /*@Service annotation is a specialization of @Component annotation. 
  *Its used with classes that provide some business functionalities. 
  */
@@ -24,7 +26,8 @@ public class AddressBookService implements IAddressBookService {
 	@Override
 	public AddressBookData getAddressBookDatById(int id) {
 		// TODO Auto-generated method stub
-		return addressBookDataList.get(id - 1);
+		return addressBookDataList.stream().filter(data -> data.getId() == id).findFirst()
+				.orElseThrow(() -> new AddressBookException("User not found"));
 	}
 
 	@Override
